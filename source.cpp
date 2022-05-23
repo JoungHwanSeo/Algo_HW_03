@@ -4,13 +4,50 @@
 #include <list>
 #include "adjarray.h"
 #include "List.h"
+#include "MatrixGraph.h"
 
 #define idx(x) x-1
 
 using namespace std;
 
 int main(void) {
-	ifstream ifs("input.txt");
+
+	ifstream ifs("input1.txt");
+	int v;
+	ifs >> v; //vertex 개수
+
+	MatrixGraph* mgraph = new MatrixGraph(v,"adj_mat_output.txt");
+
+	int edgenum; // 각 vertex가 가지는 edge개수 받아옴
+	int tovertex; //각 vertex가 어느 vertex로 이어지는지 받아옴
+
+	for (int i = 1; i <= v; i++) {
+		ifs >> edgenum; // i번째 vertex에서 가지는 vertex개수
+		for (int j = 0; j < edgenum; j++) {
+			ifs >> tovertex;
+
+			//matrix 구현
+
+			mgraph->AddEdge(i, tovertex);
+
+		}
+	}
+
+	mgraph->printM();
+
+	mgraph->firstDFS();
+
+	mgraph->secondDFS();
+
+	for (int i = 1; i <= v; i++)
+		cout << mgraph->visitinfo[i] << " ";
+
+	/// 마무리!!! delete 등 해주기
+	delete mgraph;
+
+
+
+	/*ifstream ifs("input.txt");
 	int v;
 	int* edge = nullptr;
 	int tovertex;
@@ -76,5 +113,5 @@ int main(void) {
 		delete[]matrix[i];
 	delete[]matrix;
 
-	ifs.close();
+	ifs.close();*/
 }

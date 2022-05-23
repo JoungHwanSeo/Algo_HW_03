@@ -1,4 +1,2 @@
-﻿  source.cpp
-C:\Users\jungh\source\repos\Algo_HW_03\Algo_HW_03\source.cpp(13,6): warning C4101: 'tovertex' :참조되지 않은 지역 변수입니다.
-C:\Users\jungh\source\repos\Algo_HW_03\Algo_HW_03\source.cpp(32,6): warning C4101: 'edgenum' :참조되지 않은 지역 변수입니다.
+﻿  MatrixGraph.cpp
   Algo_HW_03.vcxproj -> C:\Users\jungh\source\repos\Algo_HW_03\Debug\Algo_HW_03.exe

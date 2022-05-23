@@ -9,5 +9,5 @@ public:
 	int* VisitInfo;
 
 	ListGraph(int vertexnum);
-	void AddEdge(int fromV,int toV)
+	void AddEdge(int fromV, int toV);
 };
