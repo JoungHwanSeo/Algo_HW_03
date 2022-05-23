@@ -1,18 +1,63 @@
 #pragma once
 #include <iostream>
-#include "adjarray.h"
+#include <fstream>
+#include <string>
+#include <vector>
+#include <random>
+
+#define TRUE 1
+#define FALSE 0
+
+using namespace std;
+
 
 class AdjarrGraph {
 public:
-	adjarray* adjarr;
+	int numV;
+	int numE;
+	int* visitinfo;
+	int* Vertexorder;
+	int order;
+	ofstream ofs;
 
-	AdjarrGraph(int numv,int nume);
+	int* accumarr; //idx번째 vertex까지 누적된 edge개수
+	vector<int>* tmpvec; // 임시로 각 vertex의 edge를 저장할 vector
+	int* finalarr;
 
-	void swap(int arr[], int a,int b);
+	//reverse용
+	int* raccumarr;
+	vector<int>* rtmpvec;
+	int* rfinalarr;
 
-	void quicksort(int arr[],int p,int r);
 
-	int partition(int arr[],int p,int r);
+	AdjarrGraph(int numv,string filename);
 
-	void AddEdge(int fromV, int V[]);
+	~AdjarrGraph();
+
+	void AddEdge(int fromV, int toV);
+
+	void CompleteGraph(); //AddEdge가 모두 끝났을 때 실행
+
+	void DFS(int fromV);
+
+	void firstDFS();
+
+	void reverseDFS(int fromV);
+
+	void secondDFS();
+
+	void print(); //디버깅용
+
+	void printacc(); //디버깅용
+
+	void printfinal(); //디버깅용
+
+
+
+
+	void swap(int arr[], int a, int b);
+
+	void quicksort(int arr[], int p, int r);
+
+	int partition(int arr[], int p, int r);
 };

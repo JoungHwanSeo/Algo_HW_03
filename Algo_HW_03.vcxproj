@@ -139,7 +139,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="adjarray.cpp" />
     <ClCompile Include="AdjArrGraph.cpp" />
     <ClCompile Include="List.cpp" />
     <ClCompile Include="ListGraph.cpp" />
@@ -148,7 +147,6 @@
     <ClCompile Include="source.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="adjarray.h" />
     <ClInclude Include="AdjarrGraph.h" />
     <ClInclude Include="List.h" />
     <ClInclude Include="ListGraph.h" />
