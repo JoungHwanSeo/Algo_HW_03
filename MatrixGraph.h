@@ -37,9 +37,9 @@ public:
 
 	void firstDFS();
 
-	void reverseDFS(int fromV);
+	void reverseDFS(int fromV); //µÚÁýÀº DFS
 
-	void secondDFS();
+	void secondDFS(); 
 
 	void printM();
 };
