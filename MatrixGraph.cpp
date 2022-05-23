@@ -52,7 +52,7 @@ void MatrixGraph::DFS(int fromV) { //끝낸 뒤 order 0로 초기화 해줘야 함
 	//finishorder[fromV] = ++order; //해당 점에서 DFS끝날시 
 	Vertexorder[++order] = fromV;  //idx가 해당 order의 Vertex return
 
-	cout << "Vertex : " << fromV << "  finish : " << order << endl;
+	//cout << "Vertex : " << fromV << "  finish : " << order << endl;
 }
 
 void MatrixGraph::firstDFS() {
@@ -64,7 +64,7 @@ void MatrixGraph::firstDFS() {
 	for (int i = 1; i <= numV; i++) {
 		if (!visitinfo[i]) {  //해당 vertex를 방문하지 않았다면
 
-			cout << "DFS new start" << endl;
+			//cout << "DFS new start" << endl;
 
 			DFS(i); //방문 안된 점에서 DFS시작
 		}
@@ -110,11 +110,6 @@ void MatrixGraph::secondDFS() {
 			cout << endl;
 		}
 	}
-
-	for (int i = 1; i <= numV; i++)
-		cout << visitinfo[i] << ' ';
-	cout << endl;
-
 
 	memset(visitinfo, 0, sizeof(int) * (numV + 1));
 }

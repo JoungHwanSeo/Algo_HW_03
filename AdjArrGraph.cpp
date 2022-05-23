@@ -22,7 +22,6 @@ AdjarrGraph::AdjarrGraph(int numv,string filename) {
 	rtmpvec = new vector<int>[numv + 1];
 	//reverse/////////////////////////
 
-	ofs.open(filename);
 }
 
 AdjarrGraph::~AdjarrGraph() {

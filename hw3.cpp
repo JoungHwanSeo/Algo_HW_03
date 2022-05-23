@@ -13,6 +13,14 @@ using namespace std;
 
 int main(int argc, char** argv) {
 
+	string inputdirectory = argv[1];
+	string outputdirectory = argv[2];
+	string sel = argv[3];
+
+	for (int i = 1; i <= 3; i++) {
+		cout << argv[i] << endl;
+	}
+
 	clock_t start, finish;
 	double duration;
 
@@ -20,9 +28,10 @@ int main(int argc, char** argv) {
 	int edgenum; // 각 vertex가 가지는 edge개수 받아옴
 	int tovertex; //각 vertex가 어느 vertex로 이어지는지 받아옴
 
-	int a = 3;
+	string sel_1("adj_mat");
+	string sel_2("adj_list");
 
-	if (a == 1) {
+	if (argv[3] == sel_1) {
 		///////Matrix!!////////
 		ifstream ifs("input1.txt");
 		ifs >> v; //vertex 개수
@@ -58,7 +67,7 @@ int main(int argc, char** argv) {
 		/// 마무리!!! delete 등 해주기
 		delete mgraph;
 	}
-	else if (a == 2) {
+	else if (argv[3] == sel_2) {
 
 		ifstream ifs("input1.txt");
 		ifs >> v; //vertex 개수
@@ -96,7 +105,6 @@ int main(int argc, char** argv) {
 		ifstream ifs("input1.txt");
 		ifs >> v; //vertex 개수
 
-		//ListGraph* listgraph = new ListGraph(v, "adj_list_output.txt");
 		AdjarrGraph* arrgraph = new AdjarrGraph(v, "adj_arr_output.txt");
 
 		for (int i = 1; i <= v; i++) {
@@ -108,7 +116,6 @@ int main(int argc, char** argv) {
 				//arr구현
 				arrgraph->AddEdge(i, tovertex);
 
-				//listgraph->AddEdge(i, tovertex);
 
 			}
 		}
