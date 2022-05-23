@@ -17,9 +17,7 @@ int main(int argc, char** argv) {
 	string outputdirectory = argv[2];
 	string sel = argv[3];
 
-	for (int i = 1; i <= 3; i++) {
-		cout << argv[i] << endl;
-	}
+	ifstream ifs(inputdirectory);
 
 	clock_t start, finish;
 	double duration;
@@ -33,11 +31,12 @@ int main(int argc, char** argv) {
 
 	if (argv[3] == sel_1) {
 		///////Matrix!!////////
-		ifstream ifs("input1.txt");
+		//ifstream ifs("input1.txt");
 		ifs >> v; //vertex 개수
 
 
-		MatrixGraph* mgraph = new MatrixGraph(v, "adj_mat_output.txt");
+		//MatrixGraph* mgraph = new MatrixGraph(v, "adj_mat_output.txt");
+		MatrixGraph* mgraph = new MatrixGraph(v, outputdirectory);
 
 		int edgenum; // 각 vertex가 가지는 edge개수 받아옴
 		int tovertex; //각 vertex가 어느 vertex로 이어지는지 받아옴
@@ -69,10 +68,11 @@ int main(int argc, char** argv) {
 	}
 	else if (argv[3] == sel_2) {
 
-		ifstream ifs("input1.txt");
+		//ifstream ifs("input1.txt");
 		ifs >> v; //vertex 개수
 
-		ListGraph* listgraph = new ListGraph(v, "adj_list_output.txt");
+		//ListGraph* listgraph = new ListGraph(v, "adj_list_output.txt");
+		ListGraph* listgraph = new ListGraph(v, outputdirectory);
 
 		for (int i = 1; i <= v; i++) {
 			ifs >> edgenum; // i번째 vertex에서 가지는 vertex개수
@@ -102,10 +102,11 @@ int main(int argc, char** argv) {
 		delete listgraph;
 	}
 	else {
-		ifstream ifs("input1.txt");
+		//ifstream ifs("input1.txt");
 		ifs >> v; //vertex 개수
 
-		AdjarrGraph* arrgraph = new AdjarrGraph(v, "adj_arr_output.txt");
+		//AdjarrGraph* arrgraph = new AdjarrGraph(v, "adj_arr_output.txt");
+		AdjarrGraph* arrgraph = new AdjarrGraph(v, outputdirectory);
 
 		for (int i = 1; i <= v; i++) {
 			ifs >> edgenum; // i번째 vertex에서 가지는 vertex

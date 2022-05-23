@@ -47,7 +47,7 @@ void ListGraph::DFS(int fromV) {
 	Vertexorder[++order] = fromV;
 
 	//디버깅용... 추후 삭제예정
-	cout << "Vertex : " << fromV << "  finish : " << order << endl;
+	//cout << "Vertex : " << fromV << "  finish : " << order << endl;
 }
 
 void ListGraph::FirstDFS() {
