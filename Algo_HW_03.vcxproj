@@ -24,6 +24,7 @@
     <ProjectGuid>{0dc6a7fb-c197-48ea-bafa-29290e37bc7a}</ProjectGuid>
     <RootNamespace>AlgoHW03</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>hw3</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -144,7 +145,7 @@
     <ClCompile Include="ListGraph.cpp" />
     <ClCompile Include="MatrixGraph.cpp" />
     <ClCompile Include="Node.cpp" />
-    <ClCompile Include="source.cpp" />
+    <ClCompile Include="hw3.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AdjarrGraph.h" />

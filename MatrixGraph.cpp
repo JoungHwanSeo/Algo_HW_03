@@ -119,6 +119,10 @@ void MatrixGraph::secondDFS() {
 	memset(visitinfo, 0, sizeof(int) * (numV + 1));
 }
 
+void MatrixGraph::writetime(double duration) {
+	ofs << duration << "ms";
+}
+
 void MatrixGraph::printM() {
 	for (int i = 0; i <= numV; i++) {
 		for (int j = 0; j <= numV; j++)

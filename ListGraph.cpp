@@ -105,6 +105,10 @@ void ListGraph::secondDFS() {
 	memset(VisitInfo, 0, sizeof(int) * (numV + 1));
 }
 
+void ListGraph::wrtietime(double time) {
+	ofs << time << "ms";
+}
+
 void ListGraph::print() {
 	int nextV;
 	for (int i = 1; i <= numV; i++) {

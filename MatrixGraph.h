@@ -41,5 +41,7 @@ public:
 
 	void secondDFS(); 
 
+	void writetime(double duration);
+
 	void printM();
 };

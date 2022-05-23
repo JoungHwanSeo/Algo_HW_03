@@ -46,6 +46,8 @@ public:
 
 	void secondDFS();
 
+	void wrtietime(double time);
+
 	void print(); //µð¹ö±ë¿ë
 
 	void printacc(); //µð¹ö±ë¿ë

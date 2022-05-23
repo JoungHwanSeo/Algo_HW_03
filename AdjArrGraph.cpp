@@ -29,7 +29,6 @@ AdjarrGraph::~AdjarrGraph() {
 	delete[] visitinfo;
 	delete[] Vertexorder;
 	delete []accumarr;
-	delete[]tmpvec;
 	delete[]finalarr;
 	ofs.close();
 }
@@ -86,7 +85,7 @@ void AdjarrGraph::DFS(int fromV) {
 	}
 	Vertexorder[++order] = fromV;
 
-	cout << "Vertex : " << fromV << "  finish : " << order << endl;
+	//cout << "Vertex : " << fromV << "  finish : " << order << endl;
 }
 
 void AdjarrGraph::firstDFS() {
@@ -140,6 +139,11 @@ void AdjarrGraph::secondDFS() {
 	}
 
 	memset(visitinfo, 0, sizeof(int) * (numV + 1));
+}
+
+void AdjarrGraph::wrtietime(double time) {
+	ofs << time << "ms";
+	cout << time << "ms";
 }
 
 void AdjarrGraph::print() {
